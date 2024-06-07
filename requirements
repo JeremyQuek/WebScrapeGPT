@@ -1,0 +1,11 @@
+langchain
+openai
+tiktoken
+faiss-gpu
+langchain_experimental
+langchain[docarray]
+langchain-openai
+pypdf
+rapidocr-onnxruntime
+selenium
+unstructured
