@@ -9,32 +9,33 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 
 app = Flask(__name__)
-
 api_key = os.getenv('OpenAI_API_Key')
+urls = []
 
-urls = [
-    "https://www.lta.gov.sg/content/ltagov/en/newsroom.html#year-filter:path=default%7Cmth-filter:path=default%7Cpaging:currentPage=0%7Cpaging:number=7"
-]
-loader = SeleniumURLLoader(urls=urls)
-webpages = loader.load()
-
-embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
-vectorstore = FAISS.from_documents(webpages, embedding=embeddings)
-
-my_llm = ChatOpenAI(temperature=1.0, model_name="gpt-3.5-turbo")
-
-memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
-
-conversation_chain = ConversationalRetrievalChain.from_llm(
-    llm=my_llm,
-    chain_type="stuff",
-    retriever=vectorstore.as_retriever(),
-    memory=memory
-)
+@app.route("/set_url", methods=["POST"])
+def set_url():
+    new_url = request.json["url"]
+    urls.append(new_url)  # Add the new URL to the list
+    return jsonify({"message": "URL added successfully"}), 200
 
 @app.route("/query", methods=["POST"])
 def query():
     my_query = request.json["question"]
+
+    # Initialize or update the necessary objects
+    loader = SeleniumURLLoader(urls=urls)
+    webpages = loader.load()
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+    vectorstore = FAISS.from_documents(webpages, embedding=embeddings)
+    my_llm = ChatOpenAI(temperature=1.0, model_name="gpt-3.5-turbo")
+    memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
+    conversation_chain = ConversationalRetrievalChain.from_llm(
+        llm=my_llm,
+        chain_type="stuff",
+        retriever=vectorstore.as_retriever(),
+        memory=memory
+    )
+
     result = conversation_chain({"question": my_query})
     answer = result["answer"]
     return jsonify({"answer": answer})
