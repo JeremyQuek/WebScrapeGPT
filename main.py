@@ -10,8 +10,7 @@ from langchain.chains import ConversationalRetrievalChain
 
 app = Flask(__name__)
 
-api_key = "sk-proj-oGIsW45T6Xt9HTAiVwYAT3BlbkFJ81T1W6xQ0Zpm20FmEBg3"
-os.environ["OPENAI_API_KEY"] = api_key
+api_key = os.getenv('OpenAI_API_Key')
 
 urls = [
     "https://www.lta.gov.sg/content/ltagov/en/newsroom.html#year-filter:path=default%7Cmth-filter:path=default%7Cpaging:currentPage=0%7Cpaging:number=7"
