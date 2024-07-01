@@ -44,7 +44,7 @@ This pipeline provides two different classes for use: `GenerateTestset` and `Eva
 
 <br>
 
-## Evaluate Model
+## Part II: Evaluate Model
 
 As the name suggest, the `EvaluateModel` calculates various metrics based on the user provided testset.
 
@@ -81,7 +81,7 @@ Also note that `contexts` is **nested list**.
 
 <br>
 
-### -Other supported file types
+### - Other supported file types
 
 <details>
 <summary>Click to show more</summary>
@@ -114,7 +114,7 @@ You can directly save your results into a csv and`EvaluateModel` will take care 
 
 <br>
 
-### -Generating Report
+### - Generating Report
 Once you have passed your dataset into `EvaluateModel`, you may do `.get()` to generate a report.
 ```python
 results = EvaluateModel(dataset = 'results.csv')
@@ -151,7 +151,7 @@ Metrics: {'answer_correctness': 0.7018, 'faithfulness': 0.8841, 'answer_relevanc
 
 
 
-### -Additional Configurable Options:
+### - Additional Configurable Options:
 
 
 
