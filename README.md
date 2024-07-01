@@ -51,6 +51,8 @@ As the name suggest, the `EvaluateModel` calculates various metrics based on the
 This class requires questions, answers, retrieved contexts, and ground truths compiled.
 If you would like to generate a test case for your model, see`GenerateTestset`. 
 
+### - Formatting
+
 The answers, questions, retrieved context and ground truths must either be a python `dictionary` or `pandas.Dataframe`.
 
 
@@ -149,6 +151,7 @@ You can directly save your results into a csv and`EvaluateModel` will take care 
 
 </details>
 
+<br>
 
 ### - Additional Configurable Options:
 
