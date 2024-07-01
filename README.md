@@ -141,7 +141,7 @@ Calculating scores...
 Metrics: {'answer_correctness': 0.7018, 'faithfulness': 0.8841, 'answer_relevancy': 0.9446, 'context_precision': 0.9792, 'context_recall': 0.9437, 'BERT': 0.9097, 'Rouge': 0.4151, 'MRR': 0.5000}
 ```
 
-<br>
+
 
 
 ### Additional Configurable Options:
