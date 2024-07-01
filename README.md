@@ -3,18 +3,17 @@
 ![Python](https://img.shields.io/badge/Python-555555?style=for-the-badge&logo=python&logoColor=white)
 ![3.12](https://img.shields.io/badge/3.12-FFC11A?style=for-the-badge)
 
-<div align="center">
-  <kbd>
-    <img src="3.png" alt="drawing" width="400"/>
-  </kbd>
-</div>
 
 ## Introduction
 The RAG (Retrieval-Augmented Generation) Evaluation Pipeline is designed to evaluate the performance of machine learning 
 models by leveraging LLMs to provide detailed metric-based analysis. This pipeline aims to ensure that our models meet 
 the required standards for deployment and can effectively perform their intended tasks in real-world scenarios.
 
-
+<div align="center">
+  <kbd>
+    <img src="3.png" alt="drawing" width="300"/>
+  </kbd>
+</div>
 
 
 ## Table of Contents
