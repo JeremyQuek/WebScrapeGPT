@@ -1,8 +1,11 @@
 # RAG EVALUATION PIPELINE ⚙️    
 
-<span style="background-color: #555; color: white; padding: 4px 8px; border-radius: 4px; font-size: 14px;">python </span>
-<span style="background-color: #FFC11A; color: white; padding: 4px 8px; border-radius: 4px; font-size: 14px;">3.12</span>
+![Python](https://img.shields.io/badge/Python-555555?style=for-the-badge&logo=python&logoColor=white)
+![3.12](https://img.shields.io/badge/3.12-FFC11A?style=for-the-badge)
 
+<div align="center">
+    <img src="/Users/jeremyquek/PycharmProjects/pythonProject/Final Eval Package/Images/1.png" alt="drawing" width="400" text-align="100"/>
+</div>
 
 ## Introduction
 The RAG (Retrieval-Augmented Generation) Evaluation Pipeline is designed to evaluate the performance of machine learning 
