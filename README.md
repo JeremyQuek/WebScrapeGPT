@@ -11,7 +11,7 @@ the required standards for deployment and can effectively perform their intended
 
 <div align="center">
   <kbd>
-    <img src="3.png" alt="drawing" width="400"/>
+    <img src="3.png" alt="drawing" width="600"/>
   </kbd>
 </div>
 
