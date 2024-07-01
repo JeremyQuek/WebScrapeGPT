@@ -9,13 +9,13 @@ The RAG (Retrieval-Augmented Generation) Evaluation Pipeline is designed to eval
 models by leveraging LLMs to provide detailed metric-based analysis. This pipeline aims to ensure that our models meet 
 the required standards for deployment and can effectively perform their intended tasks in real-world scenarios.
 
-<br>
 
-<div align="center">
+<br><div align="center">
   <kbd>
     <img src="3.png" alt="drawing" width="600"/>
   </kbd>
-</div>
+</div><br>
+
 
 By offering numerical metrics and statistics, developers are able to identify weakness and tinker with hyperparameters to improve the performance of their models.
 
