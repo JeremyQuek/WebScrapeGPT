@@ -151,6 +151,7 @@ Metrics: {'answer_correctness': 0.7018, 'faithfulness': 0.8841, 'answer_relevanc
 
 
 
+
 ### 1) Metrics
 
 <details>
@@ -210,14 +211,14 @@ To provide  a holistic assessment of a RAG model, this pipeline includes 3 other
 that assess different components of a RAG pipeline. These are as shown:
 
 1) BERTScore: Bert score is a metric calculated using BERT embeddings to assess the quality of generated answer to the reference ground truth. 
-This score is calculated using Facebook's advanced RoBERTa-large model.
+This score is calculated using Facebook's advanced. [(Read more)](https://huggingface.co/FacebookAI/roberta-large)
 
 
-2) Rouge: Rouge score is a metric that assesses the quality of generated answer against a reference context based on the longest common sequence (LCS) between the two texts.
+2) Rouge: Rouge score is a metric that assesses the quality of generated answer against a reference context based on the longest common sequence (LCS) between the two texts. [(Read more)](https://github.com/google-research/google-research/tree/master/rouge).
 
 
 3) Mean Reciprocal Ranking (MRR): The MRR score reflects the ability of the retriever to prioritise 
-relevant documents in the top ranked results. It is a measure of the reciprocal of the rank of the first relevant document.
+relevant documents in the top ranked results. It is a measure of the reciprocal of the rank of the first relevant document. [(Read more}](https://www.evidentlyai.com/ranking-metrics/mean-reciprocal-rank-mrr)
 
 
 By default, if no other_metrics parameter is passed, all metrics are will be computed and displayed. You may configure this to not display certain metrics if you wish.
@@ -270,8 +271,121 @@ As this pipeline is hosted on AWS, there are several ways to utilise a custom mo
 
 ### Bring your own Models
 
-**With LangChain**
 
-Langchain offers a way to load in custom models 
+**2.1) With LangChain**
 
+Langchain offers a way to load in custom models for use with RAGAS evaluations. For more information please visit the 
+[RAGAS website](https://docs.ragas.io/en/latest/howtos/customisations/bring-your-own-llm-or-embs.html).
+
+
+Simple implemention of custom model using LangChain .
+```
+pip install langchain 
+```
+
+```python
+import os
+from langchain_openai import ChatOpenAI
+
+#Initialise Model
+os.environ["OPENAI_API_KEY"] = 'sk-proj-...'
+
+langchain_llm = ChatOpenAI(model="gpt-3.5-turbo-0125")
+
+
+#Run Report
+results = EvaluateModel(llm = langchain_llm, dataset = dataset)
+
+report = results.get()
+```
+You can also customise the use of embeddings models
+```python
+import os
+from langchain_openai import OpenAIEmbeddings
+
+#Initialise Model
+os.environ["OPENAI_API_KEY"] = 'sk-proj-...'
+
+embeddings = OpenAIEmbeddings(model="text-embeddings-3-small")
+
+
+#Run Report
+results = EvaluateModel(embeddings = embeddings, dataset = dataset)
+
+report = results.get()
+```
+<br>
+
+**2.2) With Langchain Hugging Face**
+
+Hugging face offers an alternate solution to load in custom open-source models with their transformers pipeline. 
+Below is simple code implementation of utilisng a custom hugging face model.
+
+```
+pip install langchain-huggingface
+```
+
+Importing hugging face models and embeddings
+```python
+from langchain_huggingface import ChatHuggingFace
+
+from langchain_huggingface import HuggingFaceEmbeddings
+```
+
+Implement as before.
+```python
+#Insert your access authentication token code for hugging face**
+
+
+#Initialise Models
+
+embeddings = HuggingFaceEmbeddings(model= "BAAI/bge-small-en-v1.5")
+
+llm = ChatHuggingFace(model="Mistral-7B-v0.1")
+
+
+#Run Report
+results = EvaluateModel(llm = llm, embeddings = embeddings, dataset = dataset)
+
+report = results.get()
+```
+<br>
+
+**2.3) With RAGAS Critic Model, AzureOpenAI, GCP Vertex or AWS Bedrock**
+
+For more information on integrations with more different models please visit the [RAGAS website](https://docs.ragas.io/en/latest/howtos/customisations/bring-your-own-llm-or-embs.html).
 </details>
+
+
+## Example
+
+Full code implemention:
+
+```python
+import EvaluateModel
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from ragas.metrics import (faithfulness, answer_correctness)
+import os
+
+#Initliase models
+os.environ["OPENAI_API_KEY"] = 'sk-proj-'
+langchain_llm = ChatOpenAI(model="gpt-4o")
+embeddings = OpenAIEmbeddings(model="davinci-002")
+
+
+#Define the variables
+dataset = "test_results.pkl"
+ragas_metrics = [faithfulness, answer_correctness]
+other_metrics = ["BERT", "MRR"]
+
+#Run report
+results = EvaluateModel(
+    llm = langchain_llm,
+    embeddings = embeddings,
+    dataset = dataset,
+    ragas_metrics = ragas_metrics,
+    other_metrics = other_metrics
+)
+
+report = results.get()
+```
