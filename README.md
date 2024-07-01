@@ -42,6 +42,7 @@ cd center-items-flexbox
 
 This pipeline provides two different classes for use: `GenerateTestset` and `EvaluateModel`.
 
+<br>
 
 ## Evaluate Model
 
@@ -360,6 +361,7 @@ report = results.get()
 For more information on integrations with more different models please visit the [RAGAS website](https://docs.ragas.io/en/latest/howtos/customisations/bring-your-own-llm-or-embs.html).
 </details>
 
+<br>
 
 ## Example
 
