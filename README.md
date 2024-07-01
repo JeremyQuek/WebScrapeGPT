@@ -247,6 +247,7 @@ results = EvaluateModel(dataset = 'results.csv', other_metrics = ["MRR"])
 <details>
 <summary>Click to show more</summary>
 
+
 The critical LLM is the language model used for the assessment of the various metrics of your report. 6 out of the 8 metrics
 are assessed with the use of a model. These are RAGAS metrics and the BERTScore.
 
