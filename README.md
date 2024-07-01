@@ -81,39 +81,6 @@ Also note that `contexts` is **nested list**.
 
 <br>
 
-### - Other supported file types
-
-<details>
-<summary>Click to show more</summary>
-
-If you have compiled your testset in one file and want to transfer it elsewhere, 
-you may use the following methods to transfer files.
-
-Pickle file:
-```python
-import pickle
-
-"results.pkl"
-report = EvaluateModel(dataset = "results.pkl")
-```
-CSV:
-```python
-import csv
-
-"results.csv"
-report = EvaluateModel(dataset = "results.csv")
-
-
-##All pickle files and csv files must still contain a dictionary with appropriately named columns.
-```
-
-Note: No additional steps are required to preserve the integrity of `lists` when saving as a csv file. 
-You can directly save your results into a csv and`EvaluateModel` will take care of parsing the `lists` from strings in your data.
-
-</details>
-
-<br>
-
 ### - Generating Report
 Once you have passed your dataset into `EvaluateModel`, you may do `.get()` to generate a report.
 ```python
@@ -149,6 +116,38 @@ Metrics: {'answer_correctness': 0.7018, 'faithfulness': 0.8841, 'answer_relevanc
 ```
 
 
+<br>
+
+### - Other supported file types
+
+<details>
+<summary>Click to show more</summary>
+
+If you have compiled your testset in one file and want to transfer it elsewhere, 
+you may use the following methods to transfer files.
+
+Pickle file:
+```python
+import pickle
+
+"results.pkl"
+report = EvaluateModel(dataset = "results.pkl")
+```
+CSV:
+```python
+import csv
+
+"results.csv"
+report = EvaluateModel(dataset = "results.csv")
+
+
+##All pickle files and csv files must still contain a dictionary with appropriately named columns.
+```
+
+Note: No additional steps are required to preserve the integrity of `lists` when saving as a csv file. 
+You can directly save your results into a csv and`EvaluateModel` will take care of parsing the `lists` from strings in your data.
+
+</details>
 
 
 ### - Additional Configurable Options:
