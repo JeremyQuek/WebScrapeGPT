@@ -4,7 +4,7 @@
 ![3.12](https://img.shields.io/badge/3.12-FFC11A?style=for-the-badge)
 
 <div align="center">
-    <img src="3.png" alt="drawing" width="400" text-align="100"/>
+    <img src="3.png" alt="drawing" width="400" border = "10"/>
 </div>
 
 ## Introduction
