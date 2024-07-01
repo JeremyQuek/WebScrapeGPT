@@ -4,7 +4,7 @@
 ![3.12](https://img.shields.io/badge/3.12-FFC11A?style=for-the-badge)
 
 <div align="center">
-    <img src="/Users/jeremyquek/PycharmProjects/pythonProject/Final Eval Package/Images/1.png" alt="drawing" width="400" text-align="100"/>
+    <img src="1.png" alt="drawing" width="400" text-align="100"/>
 </div>
 
 ## Introduction
