@@ -3,8 +3,6 @@
 <span style="background-color: #555; color: white; padding: 4px 8px; border-radius: 4px; font-size: 14px;">python </span>
 <span style="background-color: #FFC11A; color: white; padding: 4px 8px; border-radius: 4px; font-size: 14px;">3.12</span>
 
-<hr>
-
 
 ## Introduction
 The RAG (Retrieval-Augmented Generation) Evaluation Pipeline is designed to evaluate the performance of machine learning 
