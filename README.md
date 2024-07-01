@@ -78,6 +78,7 @@ Note: Pay close attention to the spelling of the keys (`contexts` not `context`)
 
 Also note that `contexts` is **nested list**.
 
+<br>
 
 ### Other supported file types
 
