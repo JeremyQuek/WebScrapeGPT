@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-555555?style=for-the-badge&logo=python&logoColor=white)
 ![3.12](https://img.shields.io/badge/3.12-FFC11A?style=for-the-badge)
 
-<kbd>
+<kbd align="center">
   <img src="3.png" alt="drawing" width="400"/>
 </kbd>
 
