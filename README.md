@@ -71,7 +71,7 @@ Note: Pay close attention to the spelling of the keys (`contexts` not `context`)
 
 Also note that `contexts` is **nested list**.
 
-
+<br>
 
 
 ### Other supported file types
@@ -105,7 +105,7 @@ You can directly save your results into a csv and`EvaluateModel` will take care 
 
 </details>
 
-
+<br>
 
 ### Generating Report
 Once you have passed your dataset into `EvaluateModel`, you may do `.get()` to generate a report.
@@ -141,6 +141,7 @@ Calculating scores...
 Metrics: {'answer_correctness': 0.7018, 'faithfulness': 0.8841, 'answer_relevancy': 0.9446, 'context_precision': 0.9792, 'context_recall': 0.9437, 'BERT': 0.9097, 'Rouge': 0.4151, 'MRR': 0.5000}
 ```
 
+<br>
 
 
 ### Additional Configurable Options:
